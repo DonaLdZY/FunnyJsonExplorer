@@ -1,0 +1,103 @@
+{
+    "rectangle": {
+        "top":{
+            "padding": "─",
+            "start":{
+                "open": " ┌─",
+                "opening": " │ ",
+                "last": " ├─",
+                "lasting": " │ "
+            },
+            "follow":{
+                "open": " ┌─",
+                "opening": " │ ",
+                "last": " ├─",
+                "lasting": " │ "
+            },
+            "end": "┐"
+        },
+        "body":{
+            "padding": "─",
+            "start":{
+                "open": " ├─",
+                "opening": " │ ",
+                "last": " ├─",
+                "lasting": " │ "
+            },
+            "follow":{
+                "open": " ├─",
+                "opening": " │ ",
+                "last": " ├─",
+                "lasting": " │ "
+            },
+            "end": "┤"
+        },
+        "bottom":{
+            "padding": "─",
+            "start":{
+                "open": " └─",
+                "opening": " └─",
+                "last": " └─",
+                "lasting": " └─"
+            },
+            "follow":{
+                "open": "─┴─",
+                "opening": "─┴─",
+                "last": "─┴─",
+                "lasting": "─┴─"
+            },
+            "end": "┘"
+        }
+    },
+    
+    "tree": {
+        "top":{
+            "padding": " ",
+            "start":{
+                "open": " ├─",
+                "opening": " │ ",
+                "last": " └─",
+                "lasting": "   "
+            },
+            "follow":{
+                "open": " ├─",
+                "opening": " │ ",
+                "last": " └─",
+                "lasting": "   "
+            },
+            "end": " "
+        },
+        "body":{
+            "padding": " ",
+            "start":{
+                "open": " ├─",
+                "opening": " │ ",
+                "last": " └─",
+                "lasting": "   "
+            },
+            "follow":{
+                "open": " ├─",
+                "opening": " │ ",
+                "last": " └─",
+                "lasting": "   "
+            },
+            "end": " "
+        },
+        "bottom":{
+            "padding": " ",
+            "start":{
+                "open": " └─",
+                "opening": " └─",
+                "last": " └─",
+                "lasting": "   "
+            },
+            "follow":{
+                "open": " ├─",
+                "opening": " │ ",
+                "last": " └─",
+                "lasting": "   "
+            },
+            "end": " "
+        }
+    }
+}

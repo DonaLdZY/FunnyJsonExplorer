@@ -1,0 +1,26 @@
+{
+    "poker-face": {
+        "middle": "♦",
+        "leaf": "♠"
+    },
+    "chess": {
+        "middle": "♜",
+        "leaf": "♟"
+    },
+    "star": {
+        "middle": "✬",
+        "leaf": "☆"
+    },
+    "angle": {
+        "middle": "﹀",
+        "leaf": "＞"
+    },
+    "emoji": {
+        "middle": "🤔",
+        "leaf": "🥵"
+    },
+    "space": {
+        "middle": " ",
+        "leaf": " "
+    }
+}
