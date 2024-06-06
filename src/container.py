@@ -17,7 +17,7 @@ class RootContainer:
             child.draw(new_prefix, max_length)
 
 
-class Conttainer:
+class Container:
     def __init__(self, icon, name, is_top, is_bottom, is_leaf):
         self.icon = icon
         self.name = name
@@ -34,7 +34,7 @@ class Conttainer:
         pass
 
 
-class ConfigableConttainer(Conttainer):
+class ConfigableConttainer(Container):
     def __init__(self, icon, name, is_top, is_bottom, is_leaf, style_name,
                  config_file='config/style_config.json'):
         super().__init__(icon, name, is_top, is_bottom, is_leaf)
