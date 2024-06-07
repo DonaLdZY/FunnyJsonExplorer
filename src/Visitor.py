@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 class Visitor(ABC):
     @abstractmethod
     def visit(self, component):
-        return 0
+        pass
 
 
 class DrawVisitor(Visitor):

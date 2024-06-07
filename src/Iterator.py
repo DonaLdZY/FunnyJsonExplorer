@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 class Iterator(ABC):
     @abstractmethod
     def next(self):
-        return 0
+        pass
 
     @abstractmethod
     def has_next(self):
