@@ -1,12 +1,12 @@
-# Ignore .idea directories
-.idea/
+# # Ignore .idea directories
+# .idea/
 
-# Ignore .vscode directories
-.vscode/
+# # Ignore .vscode directories
+# .vscode/
 
-# Ignore __pycache__ directories
-__pycache__/
+# # Ignore __pycache__ directories
+# __pycache__/
 
-req/
+# req/
 
-*.bkp
+# *.bkp
