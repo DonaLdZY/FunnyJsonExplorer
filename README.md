@@ -12,7 +12,11 @@
 ./fje -f <json file> -s <style> -i <icon family>
 ```
 
-Windows与Linux都是这样用哦!
+或者
+
+```shell
+python3 fje.py -f <json file> -s <style> -i <icon family>
+```
 
 # 功能介绍
 
@@ -57,49 +61,20 @@ $ ./fje -f example.json -i emoji
  │     └─🥵tangerine: cheap & juicy!
  └─🤔apples
     ├─🥵gala
-    └─🥵pink lady    
+    └─🥵pink lady  
 ```
-
-# 可扩展性
-
-## 图标族
-
-仅需编辑`config/icon_config.json`就能定义自己的图标族哦!
-
-打开这个文件你就一定懂怎么添加了:)
-
-## 风格
-
-参考以下步骤
-
-+ 在`container.py`中实现自己的`container.draw()`
-+ 在`container_factory.py`中实现自己的`containerFactory`
-+ 在main中申明使用containerFactory
-
-亦或亦可从config新建自己的风格!
-
-+ 编辑`style_config.json`,新增自己的风格模板
-+ 在container_factory.py中新增继承自ConfigableFactory的factory
-+ 在main中申明使用containerFactory
-
-style_config.json中一个风格构造如下:
-+ top/body/bottom 分别对应于第一行/中间行/最后一行
-+ start/follow 分别对应于第一位与后面位置的前缀填充
-+ opening/lasting 该级目录是否是最后一个分支时对应的前缀填充
-+ open/last 当前项目是否是上一级目录的最后一个分支,分别对应的前缀填充
-+ padding/end 后缀填充
 
 # 设计文档
 
-![1717677821746](image/README/1717677821746.png)
+![UML](doc/UML.png)
 
-+ FunnyJsonExplorer是程序的入口,解析json文件,并传递给ContainerFactory是否头行,是否尾行,是否叶节点等关键绘制信息
-+ IconFactory读取配置文件中不同的图标族
-+ RootContainer只是递归绘制Container的入口,本身不会绘制内容
-+ 每个Container类负责绘制它所属的那一行内容
-  + ConfigableContainer类实现了由config.json读取style配置进行绘制的方法
-+ ContainerFactory类负责创建Container对象,并且将IconFactory生成的Icon传递给Container
-  + ConfigableFactory是ConfigableContainer专属的抽象工厂
-    + RectangleFactory与TreeFactory是定义好初始化参数的ConfigableFactory,分别定向去配置Rectangle与Tree风格
-  
-draw()方法递归传递的prefix不是字符串,而是不同级目录"是否是最后一个项目"的01表,每个container由此计算它所在行的前缀
++ 框架
+  + 工厂模式factory创建container对象
+  + 访问者模式visitor定义了访问container要执行的行为
+  + 策略模式DrawStrategy定义了draw()的具体行为
+  + 迭代器Iterator定义了container访问子节点的方式
++ 新增图标族
+  + 直接配置`config/icon_config.json`即可!
++ 新增风格
+  + 可以基于ConfigurableStyle框架,编辑`config/style_config.json`后再新增自己的工厂方法
+  + 也可重写Strategy\Container\Factory三个部分

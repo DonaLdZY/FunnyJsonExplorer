@@ -1,28 +1,30 @@
 import os
+
 from iterator import ContainerIterator
 from utils import load_json
-from abc import ABC, abstractmethod
 
-class RootContainer(ABC):
+
+class RootContainer:
     def __init__(self):
         self.children = []
-        
+
     def add(self, component):
         self.children.append(component)
 
-    def draw(self, max_length, prefix=[]):
+    def draw(self, max_length, prefix):
         pass
 
     def accept(self, visitor):
         visitor.visit(self)
         iterator = ContainerIterator(self)
-        prefix=visitor.prefix[:]
+        prefix = visitor.prefix[:]
         while iterator.has_next():
             child = iterator.next()
-            newprefix=prefix+[iterator.has_next()]
-            visitor.setPrefix(newprefix)
+            new_prefix = prefix + [iterator.has_next()]
+            visitor.set_prefix(new_prefix)
             child.accept(visitor)
-            
+
+
 class Container(RootContainer):
     def __init__(self, icon, name, is_top, is_bottom, is_leaf, draw_strategy):
         super().__init__()
@@ -31,13 +33,17 @@ class Container(RootContainer):
         self.is_top = is_top
         self.is_bottom = is_bottom
         self.is_leaf = is_leaf
-        self.draw_strategy=draw_strategy
+        self.draw_strategy = draw_strategy
 
-    def draw(self, max_length=0, prefix=[]):
-        self.draw_strategy.draw(self,max_length,prefix)
+    def draw(self, max_length=0, prefix=None):
+        if prefix is None:
+            prefix = []
+        self.draw_strategy.draw(self, max_length, prefix)
+
 
 class ConfigurableContainer(Container):
-    def __init__(self, icon, name, is_top, is_bottom, is_leaf, draw_strategy, style_name, config_file='config/style_config.json' ):
+    def __init__(self, icon, name, is_top, is_bottom, is_leaf, draw_strategy, style_name,
+                 config_file='config/style_config.json'):
         super().__init__(icon, name, is_top, is_bottom, is_leaf, draw_strategy)
         self.style_name = style_name
         self.config_file = config_file
@@ -53,5 +59,3 @@ class ConfigurableContainer(Container):
         if line_type not in style:
             raise ValueError(f"Incomplete style: {self.style_name} style doesn't have {line_type} line config")
         return style[line_type]
-
-    

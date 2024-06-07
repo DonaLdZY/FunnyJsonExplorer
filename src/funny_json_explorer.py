@@ -1,6 +1,8 @@
 from utils import load_json
 from visitor import DrawVisitor
+
 MAX_LENGTH = 40
+
 
 class FunnyJsonExplorer:
     def __init__(self, container_factory, icon_factory):

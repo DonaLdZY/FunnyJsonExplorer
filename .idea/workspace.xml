@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e8950d9-d45c-415b-a0c1-b9439149ae88" name="更改" comment="" />
+    <list default="true" id="1e8950d9-d45c-415b-a0c1-b9439149ae88" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.$位图.drawio.bkp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/Document.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Document.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/UML.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/doc/UML.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/container.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/container_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/funny_json_explorer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/funny_json_explorer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/iterator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/iterator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visitor.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -26,7 +41,9 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Files/Documents/Course/Software_Engine/FJE&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -39,7 +56,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.17011.127" />
+        <option value="bundled-python-sdk-48aec45f0201-7e9c3bbb6e34-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.17011.127" />
       </set>
     </attachedChunks>
   </component>
@@ -54,6 +72,8 @@
       <workItem from="1717658591670" duration="1859000" />
       <workItem from="1717662870756" duration="295000" />
       <workItem from="1717665257445" duration="875000" />
+      <workItem from="1717695630873" duration="2520000" />
+      <workItem from="1717701126670" duration="5000" />
     </task>
     <servers />
   </component>

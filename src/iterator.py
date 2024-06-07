@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Iterator(ABC):
     @abstractmethod
     def next(self):
@@ -8,6 +9,7 @@ class Iterator(ABC):
     @abstractmethod
     def has_next(self):
         pass
+
 
 class ContainerIterator(Iterator):
     def __init__(self, container):
