@@ -1,4 +1,8 @@
-/.idea/
-/req/
-.git/
-.svn/
+# Ignore .idea directories
+.idea/
+
+# Ignore .vscode directories
+.vscode/
+
+# Ignore __pycache__ directories
+__pycache__/

@@ -3,6 +3,21 @@ from abc import ABC, abstractmethod
 from container import RootContainer, ConfigurableContainer
 from strategy import ConfigurableDrawStrategy
 
+        
+class FactoryRegistry:
+    def __init__(self):
+        self._factories = {}
+
+    def register_factory(self, factory_type, factory_instance):
+        if not issubclass(factory_instance.__class__, ContainerFactory):
+            raise ValueError("Factory instance must be a subclass of ContainerFactory")
+        self._factories[factory_type] = factory_instance
+
+    def get_factory(self, factory_type):
+        factory = self._factories.get(factory_type)
+        if factory is None:
+            raise ValueError(f"No factory registered for type: {factory_type}")
+        return factory
 
 class ContainerFactory(ABC):
 
