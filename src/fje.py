@@ -1,8 +1,8 @@
 import argparse
+from NodeFactory import  FactoryRegistry, TreeFactory, RectangleFactory
+from IconFactory import IconFactory
+from FunnyJsonExplorer import FunnyJsonExplorer
 
-from container_factory import  FactoryRegistry,TreeFactory, RectangleFactory
-from funny_json_explorer import FunnyJsonExplorer
-from icon_factory import IconFactory
 
 def main():
     parser = argparse.ArgumentParser(description="This is a description of the script.")

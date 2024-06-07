@@ -1,18 +1,27 @@
 import os
-
-from iterator import NodeIterator
+from Iterator import NodeIterator
 from utils import load_json
 
 
-class RootNode:
-    def __init__(self):
+class Node:
+    def __init__(self, draw_strategy, icon=None, name=None, is_top=None, is_bottom=None, is_leaf=None):
+        super().__init__()
         self.children = []
+        self.draw_strategy = draw_strategy
 
+        self.icon = icon
+        self.name = name
+        self.is_top = is_top
+        self.is_bottom = is_bottom
+        self.is_leaf = is_leaf
+        
     def add(self, component):
         self.children.append(component)
 
-    def draw(self, max_length, prefix):
-        pass
+    def draw(self, max_length=0, prefix=None):
+        if prefix is None:
+            prefix = []
+        self.draw_strategy.draw(self, max_length, prefix)
 
     def accept(self, visitor):
         visitor.visit(self)
@@ -25,23 +34,7 @@ class RootNode:
             child.accept(visitor)
 
 
-class Node(RootNode):
-    def __init__(self, icon, name, is_top, is_bottom, is_leaf, draw_strategy):
-        super().__init__()
-        self.icon = icon
-        self.name = name
-        self.is_top = is_top
-        self.is_bottom = is_bottom
-        self.is_leaf = is_leaf
-        self.draw_strategy = draw_strategy
-
-    def draw(self, max_length=0, prefix=None):
-        if prefix is None:
-            prefix = []
-        self.draw_strategy.draw(self, max_length, prefix)
-
-
-class ConfigurableNode(Node):
+class TemplateNode(Node):
     def __init__(self, icon, name, is_top, is_bottom, is_leaf, draw_strategy, style_name,
                  config_file='config/style_config.json'):
         super().__init__(icon, name, is_top, is_bottom, is_leaf, draw_strategy)

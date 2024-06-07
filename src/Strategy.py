@@ -7,12 +7,12 @@ class DrawStrategy(ABC):
         pass
 
 
-class RootDrawStrategy(DrawStrategy):
+class RootNodeDrawStrategy(DrawStrategy):
     def draw(self, component, max_length, prefix):
         pass
 
 
-class ConfigurableDrawStrategy(DrawStrategy):
+class TemplateNodeDrawStrategy(DrawStrategy):
     def draw(self, component, max_length, prefix):
         tab_table = component.load_config()
         print_buffer = ""

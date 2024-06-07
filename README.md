@@ -69,12 +69,18 @@ $ ./fje -f example.json -i emoji
 ![UML](doc/UML.png)
 
 + 框架
-  + 工厂模式factory创建container对象
-  + 访问者模式visitor定义了访问container要执行的行为
+  + 工厂模式factory创建Node对象
+  + 访问者模式visitor定义了访问Node要执行的行为
   + 策略模式DrawStrategy定义了draw()的具体行为
-  + 迭代器Iterator定义了container访问子节点的方式
+  + 迭代器Iterator定义了Node访问子节点的方式
 + 新增图标族
-  + 直接配置`config/icon_config.json`即可!
+  + 直接配置 `config/icon_config.json`即可!
 + 新增风格
-  + 可以基于ConfigurableStyle框架,编辑`config/style_config.json`后再新增自己的工厂方法
-  + 也可重写Strategy\Container\Factory三个部分
+  + 可以基于TemplateStyle框架,编辑 `config/style_config.json`后再新增自己的工厂方法
+  + 也可重写Strategy\Node\Factory三个部分
+
+* 你甚至可以输入以下命令来了解`config/icon_config.json`和`config/style_config.json`的格式哦!
+  
+```shell
+./fje -f config/style_config.json -s tree -i space
+```

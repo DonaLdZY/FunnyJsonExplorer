@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-from node import RootNode, ConfigurableNode
-from strategy import ConfigurableDrawStrategy
+from Node import TemplateNode,Node
+from Strategy import TemplateNodeDrawStrategy,RootNodeDrawStrategy
 
         
 class FactoryRegistry:
@@ -21,12 +21,12 @@ class FactoryRegistry:
 
 class NodeFactory(ABC):
 
-    @staticmethod
-    def create_root_Node():
-        return RootNode()
+    @abstractmethod
+    def create_root_node(self):
+        pass
 
     @abstractmethod
-    def create_Node(self, icon_factory, name, is_top, is_bottom):
+    def create_node(self, icon_factory, name, is_top, is_bottom):
         pass
 
     @abstractmethod
@@ -34,26 +34,29 @@ class NodeFactory(ABC):
         pass
 
 
-class ConfigurableFactory(NodeFactory):
+class TemplateNodeFactory(NodeFactory):
     def __init__(self, style_name, config_file='config/style_config.json'):
         super().__init__()
         self.style_name = style_name
         self.config_file = config_file
+        
+    def create_root_node(self):
+        return Node(RootNodeDrawStrategy())
 
-    def create_Node(self, icon_factory, name, is_top, is_bottom):
-        return ConfigurableNode(icon_factory.get_icon(is_leaf=False), name, is_top, is_bottom, False,
-                                     ConfigurableDrawStrategy(), self.style_name, self.config_file)
+    def create_node(self, icon_factory, name, is_top, is_bottom):
+        return TemplateNode(TemplateNodeDrawStrategy(), icon_factory.get_icon(is_leaf=False), name, 
+                                is_top, is_bottom, False, self.style_name, self.config_file)
 
     def create_leaf(self, icon_factory, name, is_top, is_bottom):
-        return ConfigurableNode(icon_factory.get_icon(is_leaf=True), name, is_top, is_bottom, True,
-                                     ConfigurableDrawStrategy(), self.style_name, self.config_file)
+        return TemplateNode(TemplateNodeDrawStrategy(), icon_factory.get_icon(is_leaf=True), name, 
+                                is_top, is_bottom, True, self.style_name, self.config_file)
 
 
-class TreeFactory(ConfigurableFactory):
+class TreeFactory(TemplateNodeFactory):
     def __init__(self):
         super().__init__("tree")
 
 
-class RectangleFactory(ConfigurableFactory):
+class RectangleFactory(TemplateNodeFactory):
     def __init__(self):
         super().__init__("rectangle")
